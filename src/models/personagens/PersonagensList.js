@@ -15,7 +15,7 @@ export class PersonagensList {
         this.personagens.push(personagem);
     }
 
-    upDatePersonagem(id, nome, imagem, casa, feiticos, varinha ){
+    upDatePersonagem(id, nome, imagem, casa, patrono, varinha ){
         const personagens = this.getPersonagensPorId(id);
         if(!personagens){
             return null;
@@ -24,7 +24,7 @@ export class PersonagensList {
         personagens.nome = nome;
         personagens.imagem = imagem;
         personagens.casa = casa;
-        personagens.feiticos = feiticos;
+        personagens.patrono = patrono;
         personagens.varinha = varinha;
 
         return personagens;

@@ -1,9 +1,9 @@
 // Importações das classes;
 import { Personagem } from '../models/personagens/Personagem.js';
-import { PersonagemsList } from '../models/personagens/PersonagensList.js';
+import { PersonagensList } from '../models/personagens/PersonagensList.js';
 
 
-const list = new PersonagemsList();
+const list = new PersonagensList();
 
 
 // Função de buscar todos os personagens;

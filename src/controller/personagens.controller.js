@@ -26,14 +26,7 @@ export const buscarPersonagemPorId = (req, res) => {
 
 // Função de criar um novo personagem;
 export const criarPersonagem = (req, res) => {
-
-    // Função de verificar o URL da imagem;
-    const isURLValid = (url) => {
-        if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
-            return true;
-        }
-        return false;
-    }
+    
 
     const { nome, imagem, casa, feiticos, varinha } = req.body;
 
@@ -48,7 +41,7 @@ export const criarPersonagem = (req, res) => {
 
     const personagem = new Personagem(nome, imagem, casa, feiticos, varinha);
     list.createPersonagem(personagem);
-    return res.status(201).send({message: "Personagem criado com sucesso!", data: personagem});
+    return res.status(200).send({message: "Personagem criado com sucesso!", data: personagem});
 
 }
 
@@ -76,4 +69,14 @@ export const deletarPersonagem = (req, res) => {
     }
     list.removePersonagem(id);
     return res.status(200).send({message: `Personagem com id ${id} deletado com sucesso!`});
+}
+
+
+
+export const isURLValid = (url) => {
+    if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+        return false;
+    } else {
+        return true;
+    }
 }

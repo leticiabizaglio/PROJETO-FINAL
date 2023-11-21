@@ -1,9 +1,9 @@
 import {v4 as uuidv4} from 'uuid';
 
 export class Varinha {
-  constructor(descrição, origem, imagem) {
+  constructor(descricao, origem, imagem) {
     this.id = uuidv4();
-    this.descrição = descrição;
+    this.descricao = descricao;
     this.origem = origem;
     this.imagem = imagem;
   }

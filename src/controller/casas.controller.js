@@ -6,9 +6,9 @@ const instanciaLista = new casasList();
 export const getCasas = (req, res) =>{
     const casas = instanciaLista.getAllCasas();
     if(!casas.length){
-        res.status(404).json({message:"Não existem casas cadastradas.", cadastros: `${casas.length}` })
+        res.status(404).json({message:"Não existem casas cadastradas.", registros: `${casas.length}` })
     } else{
-        res.status(200).json({message:"Operação realizada com sucesso.", status:"OK", data:casas, cadastros: `${casas.length}` })
+        res.status(200).json({message:"Operação realizada com sucesso.", status:"OK", data:casas, registros: `${casas.length}` })
     }
 }
 export const getCasaId = (req, res) =>{

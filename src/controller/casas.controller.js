@@ -56,7 +56,7 @@ export const updateCasa = (req, res) => {
 export const deleteCasa = (req, res) => {
     const { id } = req.params;
 
-    const casa = instanciaLista.getPetById(id);
+    const casa = instanciaLista.getCasaById(id);
 
     if(!casa) {
         return res.status(404).send({ message: "Not Found."});

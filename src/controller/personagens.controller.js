@@ -28,10 +28,10 @@ export const buscarPersonagemPorId = (req, res) => {
 export const criarPersonagem = (req, res) => {
     
 
-    const { nome, imagem, casa, patrono, varinha } = req.body;
+    const { nome, imagem, casa, patrono, varinha, ator } = req.body;
 
 
-    if(!nome || !imagem || !casa || !patrono || !varinha){
+    if(!nome || !imagem || !casa || !patrono || !varinha || !ator){
         return res.status(400).send({message: "Dados inválidos!"});
     }
 
@@ -39,7 +39,7 @@ export const criarPersonagem = (req, res) => {
         return res.status(400).send({message: "URL inválida!"});
     }
 
-    const personagem = new Personagem(nome, imagem, casa, patrono, varinha);
+    const personagem = new Personagem(nome, imagem, casa, patrono, varinha, ator);
     list.createPersonagem(personagem);
     return res.status(200).send({message: "Personagem criado com sucesso!", data: personagem});
 
@@ -47,13 +47,13 @@ export const criarPersonagem = (req, res) => {
 
 export const atualizarPersonagem = (req, res) => {
     const { id } = req.params;
-    const { nome, imagem, casa, patrono, varinha } = req.body;
+    const { nome, imagem, casa, patrono, varinha, ator} = req.body;
 
-    if(!nome || !imagem || !casa || !patrono || !varinha){
+    if(!nome || !imagem || !casa || !patrono || !varinha || !ator){
         return res.status(400).send({message: "Dados inválidos!"});
     }
 
-    const personagem = list.upDatePersonagem(id, nome, imagem, casa, patrono, varinha);
+    const personagem = list.upDatePersonagem(id, nome, imagem, casa, patrono, varinha, ator);
     if(!personagem){
         return res.status(404).send({message: "Personagem não encontrado!"});
     }

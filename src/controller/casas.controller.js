@@ -51,7 +51,7 @@ export const updateCasa = (req, res) => {
         return res.status(404).send({ message: "Not Found"});
     }
 
-    return res.status(200).send({message: `id: ${id}`, data: pet});
+    return res.status(200).send({message: `id: ${id}`, data: casa});
 };
 export const deleteCasa = (req, res) => {
     const { id } = req.params;

@@ -1,5 +1,5 @@
 import { Varinha } from "../models/varinhas/Varinha.js";
-import { VarinhaLista } from "../models/varinhas/VarinhaLista.js";
+import { VarinhaLista } from "../models/varinhas/VarinhasList.js";
 
 const lista = new VarinhaLista();
 
@@ -40,10 +40,9 @@ export const criarVarinha = (req, res) => {
     if (urlValido(imagem) === false) {
         return res.status(400).send({ mensagem: 'URL inválida.' });
     }
-
-    const varinhasInstancia = new Varinha(descrição, origem, imagem);
+    const varinhasInstancia = new Varinha(descricao, origem, imagem);
     lista.criarVarinha(varinhasInstancia);
-    return res.status(201).send({ message: `descricao: ${descrição}, origem: ${origem}, imagem: ${imagem}`, status: 'ok', data: varinhasInstancia });
+    return res.status(201).send({ message: `descricao: ${descricao}, origem: ${origem}, imagem: ${imagem}`, status: 'ok', data: varinhasInstancia });
 };
 
 export const atualizarVarinhaPorId = (req, res) => {

@@ -31,8 +31,12 @@ export const criarVarinha = (req, res) => {
         } else {
             return false
         }
-
     }
+    
+    if (!descricao || !origem || !imagem) {
+        return res.status(400).send({ mensagem: 'Dados inválidos' });
+    }
+
     if (urlValido(imagem) === false) {
         return res.status(400).send({ mensagem: 'URL inválida.' });
     }

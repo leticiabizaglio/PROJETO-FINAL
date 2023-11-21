@@ -5,7 +5,7 @@ import {
     createCasa,
     updateCasa,
     deleteCasa
-} from "../controllers/casas.controller.js";
+} from "../controller/casas.controller.js";
 
 const casaRoutes = Router();
 

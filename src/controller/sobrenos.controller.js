@@ -42,7 +42,7 @@ export const atualizarSobrenos = (req, res) => {
         return res.status(400).send({message: "Dados inválidos!"});
     }
 
-    const sobrenos = list.upDateSobrenos(id, nome, imagem, idade, escola, casa, email);
+    const sobrenos = list.updateSobrenos(id, nome, imagem, idade, escola, casa, email);
     if(!sobrenos){
         return res.status(404).send({message: "Pessoa não encontrada!"});
     }

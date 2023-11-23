@@ -183,9 +183,20 @@ const personagens = [
         id: 21,
         nome: "Alvo Dumbledor",
         imagem: "https://cdn.pensador.com/img/authors/al/vo/alvo-dumbledore-l.jpg",
+        casa: "Grifinória",
         patrono: "Fênix",
         varinha: "Madeira de sabugueiro e o núcleo de pelo da cauda de testrálio",
         ator: "Michael Gambon",
+    },
+    {
+        id: 22,
+        nome:"Horance Slughrorn",
+        imagem: "https://ik.imagekit.io/hpapi/slughorn.JPG",
+        casa: "Sonserina",
+        patrono: "Desconhecido",
+        varinha: "Madeira, coração de dragão",
+        ator: "Jim Broadbent",
+
     }
 
 ]

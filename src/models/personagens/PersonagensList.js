@@ -3,6 +3,12 @@ export class PersonagensList {
         this.personagens = [];
     }
 
+    // C = Create
+    createPersonagem(personagem){
+        this.personagens.push(personagem);
+    }
+
+    // R = Read
     getAllPersonagens(){
         return this.personagens;
     }
@@ -11,10 +17,8 @@ export class PersonagensList {
         return this.personagens.find((personagem) => personagem.id === id);
     }
 
-    createPersonagem(personagem){
-        this.personagens.push(personagem);
-    }
 
+    // U = Update
     upDatePersonagem(id, nome, imagem, casa, patrono, varinha, ator){
         const personagens = this.getPersonagensPorId(id);
         if(!personagens){
@@ -31,6 +35,8 @@ export class PersonagensList {
         return personagens;
     }
 
+
+    // D = Delete
     removePersonagem(personagemId){
         this.personagens = this.personagens.filter((personagem) => personagem.id !== personagemId);
     }

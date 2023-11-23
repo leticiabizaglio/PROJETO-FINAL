@@ -25,3 +25,5 @@ const casa = [
     }
 
 ]
+
+export default casas;

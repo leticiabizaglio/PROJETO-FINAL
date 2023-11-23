@@ -10,7 +10,7 @@ export const buscarTodosSobrenos = (req, res) => {
     return res.status(200).send({message: "Todos os sobrenos via controller!", status:"Ok!", data: sobrenos });
 }
 
-// Função de buscar as pessoas pelo ID;
+// Função de buscar as pessoas pelo critério de ID;
 export const buscarSobrenosPorId = (req, res) => {
     const { id } = req.params;
     const sobrenos = list.getSobrenosporId(id);

@@ -40,4 +40,5 @@ export class PersonagensList {
     removePersonagem(personagemId){
         this.personagens = this.personagens.filter((personagem) => personagem.id !== personagemId);
     }
+    
 }

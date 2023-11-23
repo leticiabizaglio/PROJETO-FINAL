@@ -45,6 +45,7 @@ export const criarPersonagem = (req, res) => {
 
 }
 
+// Função de editar e atualizar um personagem;
 export const atualizarPersonagem = (req, res) => {
     const { id } = req.params;
     const { nome, imagem, casa, patrono, varinha, ator} = req.body;
@@ -60,6 +61,8 @@ export const atualizarPersonagem = (req, res) => {
     return res.status(200).send({message: `Personagem com id ${id} atualizado com sucesso!`});
 }
 
+
+// Função de deletar um personagem;
 export const deletarPersonagem = (req, res) => {
     const { id } = req.params;
     const personagem = list.getPersonagensPorId(id);
@@ -73,6 +76,7 @@ export const deletarPersonagem = (req, res) => {
 
 
 
+// Função de verificação da URL da imagem;
 export const isURLValid = (url) => {
     if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
         return false;

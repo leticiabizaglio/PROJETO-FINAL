@@ -13,7 +13,7 @@ const varinhas = [
     },
     {
         id: 3,
-        descricao: 'Comprimento. A primeira varinha de Ronald Weasley foi uma varinha de 12" (30,48 cm) tempo, feita de freixo, e tinha um núcleo de pelo de unicórnio.',
+        descricao: 'A primeira varinha de Ronald Weasley foi uma varinha de 12" (30,48 cm) tempo, feita de freixo, e tinha um núcleo de pelo de unicórnio.',
         origem: 'Ela originalmente pertencia a seu irmão mais velho Carlos Weasley.',
         imagem: 'https://i.pinimg.com/564x/0a/e9/5a/0ae95ae9b1da17370a80ca661fc51c6e.jpg'
     },
@@ -25,13 +25,13 @@ const varinhas = [
     },
     {
         id: 5,
-        descricao: 'Rígida, adequado para Transfiguração. A varinha de Minerva McGonagall é feita de Abeto e corda de coração de dragão com 36 cm, boa para Transfiguração.',
+        descricao: 'A varinha de Minerva McGonagall é feita de Abeto e corda de coração de dragão com 36 cm, boa para transfiguração.',
         origem: 'Minerva comprou esta varinha em 1947 no Olivaras pouco tempo antes de embarcar para seu primeiro ano em Hogwarts.',
         imagem: 'https://i.pinimg.com/564x/8f/60/7b/8f607be6be7b6cbfde38c465828f3a0e.jpg'
     },
     {
         id: 6,
-        descricao: 'Mede 30 cm de comprimento, era feita de frei o e continha um único pelo de unicórnio.',
+        descricao: 'A varinha de Cedric Diggory mede 30 cm de comprimento, era feita de frei o e continha um único pelo de unicórnio.',
         origem: 'A varinha foi feita por Garrick Olivaras que a descreveu como “agradavelmente flexível”!durante a cerimônia de pesagem das varinhas para o Torneio Tribuxo.',
         imagem: 'https://i.pinimg.com/564x/7a/23/a2/7a23a29ad9e1ee9831cad86e5a946871.jpg'
     },
@@ -43,7 +43,7 @@ const varinhas = [
     },
     {
         id: 8,
-        descricao: 'A varinha é descrita como sendo feita de madeira de sabugueiro e possui um núcleo de pelo de cauda de coração de dragão.',
+        descricao: 'A varinha de Severus Snape é descrita como sendo feita de madeira de sabugueiro e possui um núcleo de pelo de cauda de coração de dragão.',
         origem: 'Na série Harry Potter, a origem da varinha de Severo Snape não é explicitamente mencionada nos livros ou nos filmes.',
         imagem: 'https://i.pinimg.com/564x/61/4e/b7/614eb73081b0daf41538f1b86e193658.jpg'
     },
@@ -60,7 +60,7 @@ const varinhas = [
         imagem: 'https://i.pinimg.com/564x/a6/c3/ec/a6c3ecd7fe8fac7c257de1aa8778e866.jpg'
     },
     {
-        id : 11,
+        id: 11,
         descricao: 'A varinha de Neville Longbottom feita de cerejeira, 33,02cm, tendo como núcleo de pelo de unicórnio.',
         origem: 'Neville comprou esta varinha em 1996 após sua primeira varinha ser quebrada por Antonin Dolohov durante a Batalha do Departamento de Mistérios.',
         imagem: 'https://i.pinimg.com/564x/4a/85/1e/4a851e3500a0e3d869022bf51c477a7f.jpg'
@@ -97,15 +97,15 @@ const varinhas = [
     },
     {
         id: 17,
-        descricao: 'É uma varinha de teixo, 34cm, tendo como núcleo pena de fênix.',
+        descricao: 'A varinha de Lord Voldemort é feita de teixo, 34cm, tendo como núcleo pena de fênix.',
         origem: 'Ela foi fabricada por Garrick Olivaras e era a "irmã" ou "gêmea" da varinha de Harry Potter, como seus núcleos provinham de um mesmo animal.',
         imagem: 'https://i.pinimg.com/564x/9f/54/47/9f5447281366875c8b8ffef28e9ebe17.jpg'
     },
     {
-    id: 18,
-    descricao: 'A varinha de Horácio Slughorn é feita de madeira de cedro e de núcleo de corda de coração de dragão, medindo 26 cm. É descrita como "bastante flexível".',
-    origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
-    imagem: 'https://i.pinimg.com/564x/74/1f/13/741f134bfa1382895eeef6f8dbd58160.jpg '
+        id: 18,
+        descricao: 'A varinha de Horácio Slughorn é feita de madeira de cedro e de núcleo de corda de coração de dragão, medindo 26 cm. É descrita como "bastante flexível".',
+        origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
+        imagem: 'https://i.pinimg.com/564x/74/1f/13/741f134bfa1382895eeef6f8dbd58160.jpg '
     },
     {
         id: 19,

@@ -54,6 +54,48 @@ const varinhas = [
         imagem: 'https://i.pinimg.com/564x/db/a9/3f/dba93f3c3775170418308a6e43208eeb.jpg'
     },
     {
+        id: 10,
+        descricao: 'A Varinha de Luna Lovegood era de comprimento, madeira, material e núcleo desconhecidos.',
+        origem: 'Luna teve esta varinha pelo menos desde no início do Ano letivo 1995-1996, seu quarto ano na Escola de Magia e Bruxaria de Hogwarts.',
+        imagem: 'https://i.pinimg.com/564x/a6/c3/ec/a6c3ecd7fe8fac7c257de1aa8778e866.jpg'
+    },
+    {
+        id : 11,
+        descricao: 'A varinha de Neville Longbottom feita de cerejeira, 33,02cm, tendo como núcleo de pelo de unicórnio.',
+        origem: 'Neville comprou esta varinha em 1996 após sua primeira varinha ser quebrada por Antonin Dolohov durante a Batalha do Departamento de Mistérios.',
+        imagem: 'https://i.pinimg.com/564x/4a/85/1e/4a851e3500a0e3d869022bf51c477a7f.jpg'
+    },
+    {
+        id: 12,
+        descricao: 'A varinha de Ginevra Weasley era feita de madeira de teixo e possuía um comprimento e núcleo desconhecidos.',
+        origem: 'Assim como a maioria dos bruxos britânicos, Gina provavelmente comprou sua varinha aos onze anos na Olivaras Varinhas antes de iniciar sua educação em Hogwarts.',
+        imagem: 'https://i.pinimg.com/564x/66/a3/0f/66a30f7d705f9fdba5bd8fa5e0ea8f28.jpg'
+    },
+    {
+        id: 13,
+        descricao: 'A varinha de Sirius Black é de comprimento, madeira e núcleo desconhecidos. A varinha foi fabricada pela Garrick Olivaras. ',
+        origem: ' Sirius comprou sua varinha com a idade de onze anos na loja de varinhas Olivaras antes de começar na Escola de Magia e Bruxaria de Hogwarts em 1971.',
+        imagem: 'https://i.pinimg.com/564x/75/7a/e3/757ae3cfcdd4332d4fed2200fbf497ab.jpg '
+    },
+    {
+        id: 14,
+        descricao: 'A varinha de Remus Lupin é feita de resina e com uma caixa super linda, além de uma seda interna, é ideal para deixar de decoração, exposto em seu cantinho favorito.',
+        origem: 'Não é especificada em livros ou filmes, sendo desconhecida sua origem.',
+        imagem: 'https://i.pinimg.com/564x/64/a8/b0/64a8b0e280596898910057b2bed70f54.jpg '
+    },
+    {
+        id: 15,
+        descricao: 'A varinha de Arthur Weasley tem sua descrição desconhecida.',
+        origem: 'A varinha de Arthur Weasley tem sua origem desconhecida.',
+        imagem: 'https://i.pinimg.com/564x/34/ce/9a/34ce9ae424018800d69be659191e130c.jpg '
+    },
+    {
+        id: 16,
+        descricao: 'A varinha de Belatriz Lestrange era uma varinha feita de nogueira, 32,385cm, inflexível e tinha como núcleo de corda de coração de dragão.',
+        origem: 'Não é especificada em livros ou filmes, sendo desconhecida sua origem.',
+        imagem: 'https://i.pinimg.com/564x/5f/b8/48/5fb848b841d1beb62cd088d2a160365a.jpg ',
+    },
+    {
 
     }
 

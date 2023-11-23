@@ -80,7 +80,7 @@ const varinhas = [
     {
         id: 14,
         descricao: 'A varinha de Remus Lupin é feita de resina e com uma caixa super linda, além de uma seda interna, é ideal para deixar de decoração, exposto em seu cantinho favorito.',
-        origem: 'Não é especificada em livros ou filmes, sendo desconhecida sua origem.',
+        origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
         imagem: 'https://i.pinimg.com/564x/64/a8/b0/64a8b0e280596898910057b2bed70f54.jpg '
     },
     {
@@ -92,12 +92,43 @@ const varinhas = [
     {
         id: 16,
         descricao: 'A varinha de Belatriz Lestrange era uma varinha feita de nogueira, 32,385cm, inflexível e tinha como núcleo de corda de coração de dragão.',
-        origem: 'Não é especificada em livros ou filmes, sendo desconhecida sua origem.',
+        origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
         imagem: 'https://i.pinimg.com/564x/5f/b8/48/5fb848b841d1beb62cd088d2a160365a.jpg ',
     },
     {
-
+        id: 17,
+        descricao: 'É uma varinha de teixo, 34cm, tendo como núcleo pena de fênix.',
+        origem: 'Ela foi fabricada por Garrick Olivaras e era a "irmã" ou "gêmea" da varinha de Harry Potter, como seus núcleos provinham de um mesmo animal.',
+        imagem: 'https://i.pinimg.com/564x/9f/54/47/9f5447281366875c8b8ffef28e9ebe17.jpg'
+    },
+    {
+    id: 18,
+    descricao: 'A varinha de Horácio Slughorn é feita de madeira de cedro e de núcleo de corda de coração de dragão, medindo 26 cm. É descrita como "bastante flexível".',
+    origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
+    imagem: 'https://i.pinimg.com/564x/74/1f/13/741f134bfa1382895eeef6f8dbd58160.jpg '
+    },
+    {
+        id: 19,
+        descricao: 'A Varinha de Dolores Umbridge tem 20,32 cm de comprimento, feita de bétula com núcleo de corda de coração de dragão.',
+        origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
+        imagem: 'https://i.pinimg.com/564x/2f/94/81/2f94813b46928768377fc51a3e40abf8.jpg'
+    },
+    {
+        id: 20,
+        descricao: 'A varinha de Fred Weasley era de feita de madeira e núcleo desconhecidos. ',
+        origem: 'Posses. Varinha: A varinha de Fred Weasley foi comprada em 1989, quando ele tinha onze anos. Embora provavelmente tenha sido comprado de segunda mão como muitos dos pertences da Família Weasley.',
+        imagem: 'https://i.pinimg.com/564x/ce/a3/bb/cea3bbea094fda8dbe76c52826fba7ff.jpg'
+    },
+    {
+        id: 21,
+        descricao: 'A varinha de Jorge Weasley era feita de madeira e núcleo desconhecidos. ',
+        origem: 'Não é especificada em livros ou filmes, tendo sua desconhecida origem.',
+        imagem: 'https://i.pinimg.com/564x/a3/9a/99/a39a998b9c6a3a339b3cf7acc9d535e9.jpg '
+    },
+    {
+        id: 22,
+        descricao: 'A varinha de Alvo Dumbledore é antiga e feita de madeira de sabugueiro. Possui comprimento de 38,1 cm de comprimento e um núcleo de pelo da cauda de testrálio',
+        origem: 'O nome Varinha das Varinhas ganhou diversos nomes através dos séculos, sendo conhecida também como Varinha do Destino e Varinha da Morte.',
+        imagem: 'https://i.pinimg.com/564x/51/e3/c0/51e3c09797f4922849b2cb1dfb303a86.jpg '
     }
-
-
-];
+]

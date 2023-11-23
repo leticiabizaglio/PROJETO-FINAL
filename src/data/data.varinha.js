@@ -54,7 +54,7 @@ const varinhas = [
         imagem: 'https://i.pinimg.com/564x/db/a9/3f/dba93f3c3775170418308a6e43208eeb.jpg'
     },
     {
-        
+
     }
 
 

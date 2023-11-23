@@ -1,6 +1,3 @@
-import casa from "../../data/data.casa.js";
-
-
 export class casasList {
     constructor() {
         this.casas = [];

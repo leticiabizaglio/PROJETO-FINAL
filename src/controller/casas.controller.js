@@ -1,7 +1,15 @@
 import { Casa } from "../models/casas/Casa.js";
 import { casasList } from "../models/casas/CasasList.js";
+import casa from "../data/data.casa.js";
 
-const instanciaLista = new casasList();
+const instanciaLista = new casasList(); 
+
+
+casa.map(casa => new Casa (
+    casa.nome,
+    casa.imagem,
+    casa.origem
+)).forEach(casa => instanciaLista.createCasa(casa));
 
 export const getCasas = (req, res) =>{
     const casas = instanciaLista.getAllCasas();

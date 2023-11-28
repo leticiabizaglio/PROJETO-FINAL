@@ -1,9 +1,19 @@
 // Importações das classes;
 import { Personagem } from '../models/personagens/Personagem.js';
 import { PersonagensList } from '../models/personagens/PersonagensList.js';
+import personagens from '../data/data.personagem.js';
 
 
 const list = new PersonagensList();
+
+personagens.map(personagens => new personagens (
+    personagens.nome,
+    personagens.imagem,
+    personagens.casa,
+    personagens.patrono,
+    personagens.varinha,
+    personagens.ator
+)).forEach(personagens => list.createPersonagem(personagens));
 
 
 // Função de buscar todos os personagens;

@@ -9,7 +9,7 @@ varinhas.map(varinha => new Varinha (
     varinha.descricao,
     varinha.origem,
     varinha.imagem
-)).forEach(varinha => lista.createVarinha(varinha));
+)).forEach(varinha => lista.criarVarinha(varinha));
 
 export const obterTodasVarinhas = (req, res) => {
     const varinhas = lista.obterTodasVarinhas();

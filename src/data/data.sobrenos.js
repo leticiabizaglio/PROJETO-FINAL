@@ -45,3 +45,5 @@ const pessoas = [
         email: "maria.valonga@aluno.senai.br"
     }
 ]
+
+export default pessoas;

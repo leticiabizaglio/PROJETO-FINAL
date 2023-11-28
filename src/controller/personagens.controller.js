@@ -6,7 +6,7 @@ import personagens from '../data/data.personagem.js';
 
 const list = new PersonagensList();
 
-personagens.map(personagens => new personagens (
+personagens.map(personagens => new Personagem (
     personagens.nome,
     personagens.imagem,
     personagens.casa,

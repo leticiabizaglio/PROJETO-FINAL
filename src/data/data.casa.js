@@ -26,4 +26,4 @@ const casa = [
 
 ]
 
-export default casas;
+export default casa;

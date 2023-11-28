@@ -132,3 +132,5 @@ const varinhas = [
         imagem: 'https://i.pinimg.com/564x/51/e3/c0/51e3c09797f4922849b2cb1dfb303a86.jpg '
     }
 ]
+
+export default varinhas;

@@ -1,8 +1,19 @@
+import pessoas from "../data/data.sobrenos.js";
 import { Sobrenos } from "../models/sobrenos/Sobrenos.js";
 import { SobrenosList } from "../models/sobrenos/SobrenosList.js";
 
 
 const list = new SobrenosList();
+
+pessoas.map(pessoas => new Sobrenos (
+    pessoas.id,
+    pessoas.nome,
+    pessoas.imagem,
+    pessoas.idade,
+    pessoas.escola,
+    pessoas.casa,
+    pessoas.email
+)). forEach(pessoas => list.createSobrenos(pessoas));
 
 // Função de buscar todas as pessoas;
 export const buscarTodosSobrenos = (req, res) => {

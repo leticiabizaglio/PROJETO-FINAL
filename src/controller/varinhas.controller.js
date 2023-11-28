@@ -1,7 +1,15 @@
+import varinhas from "../data/data.varinha.js";
 import { Varinha } from "../models/varinhas/Varinha.js";
 import { VarinhaLista } from "../models/varinhas/VarinhasList.js";
 
 const lista = new VarinhaLista();
+
+varinhas.map(varinha => new Varinha (
+    varinha.id,
+    varinha.descricao,
+    varinha.origem,
+    varinha.imagem
+)).forEach(varinha => lista.createVarinha(varinha));
 
 export const obterTodasVarinhas = (req, res) => {
     const varinhas = lista.obterTodasVarinhas();

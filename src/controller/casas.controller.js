@@ -5,6 +5,7 @@ import casa from "../data/data.casa.js";
 const instanciaLista = new casasList(); 
 
 casa.map(casa => new Casa (
+    casa.id,
     casa.nome,
     casa.imagem,
     casa.origem

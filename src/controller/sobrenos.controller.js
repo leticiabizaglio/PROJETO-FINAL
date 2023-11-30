@@ -6,7 +6,6 @@ import { SobrenosList } from "../models/sobrenos/SobrenosList.js";
 const list = new SobrenosList();
 
 pessoas.map(pessoas => new Sobrenos (
-    pessoas.id,
     pessoas.nome,
     pessoas.imagem,
     pessoas.idade,

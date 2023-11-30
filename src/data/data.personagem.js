@@ -19,7 +19,7 @@ const personagens = [
     },
     {
         id: 3,
-        nome: "Ron Weasley",
+        nome: "Rony Weasley",
         imagem: "https://ik.imagekit.io/hpapi/ron.jpg",
         casa: "Grifinória",
         patrono: "Cachorro (jack russell terrier)",

@@ -2,7 +2,7 @@ const pessoas = [
     {
         id:1,
         nome: "Aline Evangelista da Silva",
-        imagem: "/images/aline.jpg",
+        imagem: "/imagens/aline.jpg",
         idade: 18,
         escola: "SESI",
         casa: "Sonserina",
@@ -11,7 +11,7 @@ const pessoas = [
     {
         id: 2,
         nome: "Isadora Ribeiro Mendes",
-        imagem: "/images/isadora.jpg",
+        imagem: "/imagens/isadora.jpg",
         idade: 17,
         escola: "SESI",
         casa: "Sonserina",
@@ -20,7 +20,7 @@ const pessoas = [
     {
         id: 3,
         nome: "Júlia Ferreira da Silva",
-        imagem: "/images/julia.jpg",
+        imagem: "/imagens/julia.jpeg",
         idade: 16,
         escola: "SESI",
         casa: "Grifinória",
@@ -29,7 +29,7 @@ const pessoas = [
     {
         id: 4,
         nome: "Letícia Cardoso Bizaglio",
-        imagem: "/images/leticia.jpg",
+        imagem: "/imagens/leticia.jpg",
         idade: 16,
         escola: "SESI",
         casa: "Sonserina",
@@ -38,7 +38,7 @@ const pessoas = [
     {
         id: 5,
         nome: "Maria Eduarda Valonga",
-        imagem: "/images/maria.jpg",
+        imagem: "/imagens/valonga.jpg",
         idade: 16,
         escola: "SESI",
         casa: "Sonserina",

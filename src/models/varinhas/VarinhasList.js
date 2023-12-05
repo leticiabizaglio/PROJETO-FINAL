@@ -13,7 +13,7 @@ export class VarinhaLista {
     obterVarinhaPorId(id) {
         return this.varinhas.find(varinha => varinha.id === id);
     }
-    atualizarVarinhaPorId(id, descricao, origem, imagem) {
+    atualizarVarinha(id, descricao, origem, imagem) {
         const varinha = this.obterVarinhaPorId(id);
 
         if (varinha) {
@@ -23,7 +23,7 @@ export class VarinhaLista {
         }
         return varinha;
     }
-    excluirVarinhaPorId(id) {
-        this.varinhas = this.varinhas.filter(varinha => varinha.id !== id);
+    excluirVarinha(varinhaId) {
+        this.varinhas = this.varinhas.filter((varinha) => varinha.id !== varinhaId);
     }
 }

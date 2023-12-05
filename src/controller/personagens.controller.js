@@ -16,9 +16,29 @@ personagens.map(personagens => new Personagem (
 )).forEach(personagens => list.createPersonagem(personagens));
 
 
+
+
 // Função de buscar todos os personagens;
 export const buscarTodosPersonagens = (req, res) => {
+
     const personagens = list.getAllPersonagens();
+
+    const {tipo} = req.query;
+
+    if(tipo){
+        const filter= personagens.filter((personagens) => personagens.tipo == tipo);
+        if(!filter.length){
+            return res.status(404).send({message: `Nenhum personagem foi cadastrado com essse tipo !`});
+        }
+        filter.forEach((personagens) => {
+            if(personagens.nome == true){
+                personagens.nome ="Sim";
+            }else{
+                personagens.nome = "Não";
+            }
+        });
+        return res.status(200).send({message: `Todos os personagens do nome ${filter.length}`, status:"Ok!", data: filter});
+    }
 
     return res.status(200).send({message: "Todos os personagens via controller!", status:"Ok!", data: personagens});
 }

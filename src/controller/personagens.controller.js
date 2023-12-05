@@ -25,7 +25,17 @@ export const buscarTodosPersonagens = (req, res) => {
 
     if(tipo){
         const filteredPersonagens = personagens.filter(personagens => personagens.casa === tipo);
-        return res.status(200).send({message: `Todos os personagens da casa ${tipo}`, status:"Ok!", data: filteredPersonagens});
+        if(!filteredPersonagens.length){
+            return res.status(404).send({message: `Nenhum personagem foi encontrado com essse tipo foi encontrado!`});
+        }
+        filteredPersonagens.forEach((personagens) => {
+            if(personagens.nome == true){
+                personagens.nome ="Sim";
+            }else{
+                personagens.nome = "Não";
+            }
+        });
+        return res.status(200).send({message: `Todos os personagens do nome ${tipo}`, status:"Ok!", data: filteredPersonagens});
     }
 
     return res.status(200).send({message: "Todos os personagens via controller!", status:"Ok!", data: personagens});

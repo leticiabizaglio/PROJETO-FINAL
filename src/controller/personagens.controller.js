@@ -51,7 +51,32 @@ export const criarPersonagem = (req, res) => {
     if (personagens.find((personagem) => personagem.nome.toLowerCase() === nome.toLowerCase())) {
         return res.status(400).send({message: "Personagem ja existe!"});
     }
-
+    if(personagem.length < 3 || personagem.length > 50) {
+        return res.status(400).send({
+            message: "Personagem deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(casa.length < 3 || casa.length > 50) {
+        return res.status(400).send({
+            message: "Casa deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    
+    if(patrono.length < 3 || patrono.length > 50) {
+        return res.status(400).send({
+            message: "Patrono deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(varinha.length < 3 || varinha.length > 50) {
+        return res.status(400).send({
+            message: "Varinha deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(ator.length < 3 || ator.length > 50) {
+        return res.status(400).send({
+            message: "Ator deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
 
 
     if(!isURLValid(imagem) === false){

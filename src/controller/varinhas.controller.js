@@ -29,8 +29,20 @@ export const buscarVarinhaPorId = (req, res) => {
 
 export const criarVarinha = (req, res) => {
     const {descricao, origem, imagem } = req.body;
+    const isURLValid = (url) => {
+        if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
+            return true;
+        }else {
+            return false;
+        }
+    }
     if(!descricao || !origem || !imagem){
         return res.status(400).send({message: "Dados inválidos!"});
+    }
+    if (isURLValid(imagem) === false) {
+        return res.status(400).send({
+            message: "URL da imagem é invalida!"
+        });
     }
     const varinha = new Varinha(descricao, origem, imagem);
     list.criarVarinha(varinha);

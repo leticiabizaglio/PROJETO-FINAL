@@ -37,7 +37,7 @@ export const criarVarinha = (req, res) => {
         }
     }
     if(!dono || !origem || !imagem){
-        return res.status(400).send({message: "Dados inválidos!"});
+        return res.status(400).send({message: "Preencha todos os campos!"});
     }
     if(dono.length < 3 || dono.length > 50) {
         return res.status(400).send({

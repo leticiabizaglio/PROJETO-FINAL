@@ -4,26 +4,26 @@ export class PersonagensList {
     }
 
     // C = Create
-    createPersonagem(personagem){
+    createPersonagem(personagem) {
         this.personagens.push(personagem);
     }
 
     // R = Read
-    getAllPersonagens(){
+    getAllPersonagens() {
         return this.personagens;
     }
 
-    getPersonagensPorId(id){
+    getPersonagensPorId(id) {
         return this.personagens.find((personagem) => personagem.id === id);
     }
 
 
     // U = Update
-    upDatePersonagem(id, nome, imagem, casa, patrono, varinha, ator){
+    upDatePersonagem(id, nome, imagem, casa, patrono, varinha, ator) {
         const personagens = this.getPersonagensPorId(id);
-        if(!personagens){
+        if (!personagens) {
             return null;
-        } 
+        }
 
         personagens.nome = nome;
         personagens.imagem = imagem;
@@ -37,8 +37,9 @@ export class PersonagensList {
 
 
     // D = Delete
-    removePersonagem(personagemId){
+    removePersonagem(personagemId) {
         this.personagens = this.personagens.filter((personagem) => personagem.id !== personagemId);
     }
-    
+
+
 }

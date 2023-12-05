@@ -16,9 +16,17 @@ personagens.map(personagens => new Personagem (
 )).forEach(personagens => list.createPersonagem(personagens));
 
 
+
+
 // Função de buscar todos os personagens;
 export const buscarTodosPersonagens = (req, res) => {
     const personagens = list.getAllPersonagens();
+    const {tipo} = req.query;
+
+    if(tipo){
+        const filteredPersonagens = personagens.filter(personagens => personagens.casa === tipo);
+        return res.status(200).send({message: `Todos os personagens da casa ${tipo}`, status:"Ok!", data: filteredPersonagens});
+    }
 
     return res.status(200).send({message: "Todos os personagens via controller!", status:"Ok!", data: personagens});
 }

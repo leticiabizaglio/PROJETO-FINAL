@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { obterTodasVarinhas, obterVarinhaPorId, criarVarinha, 
-atualizarVarinha, excluirVarinha} from "../controller/varinhas.controller.js";
+import { buscarVarinhas, buscarVarinhaPorId, criarVarinha, 
+atualizarVarinha, deletarVarinha} from "../controller/varinhas.controller.js";
 
 const rotasVarinhas = Router();
-rotasVarinhas.get('/', obterTodasVarinhas);
-rotasVarinhas.get('/:id', obterVarinhaPorId);
+rotasVarinhas.get('/', buscarVarinhas);
+rotasVarinhas.get('/:id', buscarVarinhaPorId);
 rotasVarinhas.post('/', criarVarinha);
 rotasVarinhas.put('/:id', atualizarVarinha);
-rotasVarinhas.delete('/:id', excluirVarinha);
+rotasVarinhas.delete('/:id', deletarVarinha);
 
 export default rotasVarinhas;
 

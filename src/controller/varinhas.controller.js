@@ -1,82 +1,62 @@
-import varinhas from "../data/data.varinha.js";
-import { Varinha } from "../models/varinhas/Varinha.js";
 import { VarinhaLista } from "../models/varinhas/VarinhasList.js";
+import { Varinha } from "../models/varinhas/Varinha.js";
+import varinhas from "../data/data.varinha.js";
 
-const lista = new VarinhaLista();
+
+const list = new VarinhaLista();
 
 varinhas.map(varinha => new Varinha (
     varinha.id,
     varinha.descricao,
     varinha.origem,
     varinha.imagem
-)).forEach(varinha => lista.criarVarinha(varinha));
+)).forEach(varinha => list.criarVarinha(varinha));
 
-export const obterTodasVarinhas = (req, res) => {
-    const varinhas = lista.obterTodasVarinhas();
 
-    if (!varinhas.length) {
-        return res.status(404).send({ mensagem: "Não há varinhas cadastradas." });
-    }
-    return res.status(200).send({ message: 'Varinhas encontradas com sucesso!', status: 'ok', data: varinhas });
+export const buscarVarinhas = (req, res) => {
+const varinhas = list.obterTodasVarinhas();
+return res.status(200).send({message: "Todas as varinhas via controller!", status:"Ok!", data: varinhas});
 }
 
-export const obterVarinhaPorId = (req, res) => {
+export const buscarVarinhaPorId = (req, res) => {
     const { id } = req.params;
-    const varinha = lista.obterVarinhaPorId(id);
-
-    if (!varinha) {
-        return res.status(404).send({ mensagem: 'Varinha não encontrada.' });
+    const varinha = list.obterVarinhaPorId(id);
+    if(!varinha){
+        return res.status(404).send({message: "Varinha não encontrada!"});
     }
-    return res.status(200).send({ message: `Varinha com id ${id}} encontrada com sucesso!`, status: 'ok', data: varinha });
+    return res.status(200).send({message: `Varinha com id ${id}`, status:"Ok!"});
 }
 
 export const criarVarinha = (req, res) => {
-    const { descricao, origem, imagem } = req.body
-    const urlValido = (url) => {
-        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
-            return true;
-
-        } else {
-            return false
-        }
+    const {descricao, origem, imagem } = req.body;
+    if(!descricao || !origem || !imagem){
+        return res.status(400).send({message: "Dados inválidos!"});
     }
-    
-    if (!descricao || !origem || !imagem) {
-        return res.status(400).send({ mensagem: 'Dados inválidos' });
-    }
-
-    if (urlValido(imagem) === false) {
-        return res.status(400).send({ mensagem: 'URL inválida.' });
-    }
-    const varinhasInstancia = new Varinha(descricao, origem, imagem);
-    lista.criarVarinha(varinhasInstancia);
-    return res.status(201).send({ message: `descricao: ${descricao}, origem: ${origem}, imagem: ${imagem}`, status: 'ok', data: varinhasInstancia });
-};
+    const varinha = new Varinha(descricao, origem, imagem);
+    list.criarVarinha(varinha);
+    return res.status(200).send({message: "Varinha criada com sucesso!", status:"Ok!"});
+}
 
 export const atualizarVarinha = (req, res) => {
-    const {id} = req.params;
-    const {descricao, origem, imagem} = req.body;
-
-    if (!descricao || !origem || !imagem) {
-        return res.status(400).send({ mensagem: 'Dados inválidos.' });
+    const { id } = req.params;
+    const { descricao, origem, imagem } = req.body;
+    if(!descricao || !origem || !imagem){
+        return res.status(400).send({message: "Dados inválidos!"});
     }
-    const varinha = lista.atualizarVarinha(id, descricao, origem, imagem);
-    if(!varinha) {
-        return res.status(404).send({ mensagem: 'Varinha não encontrada.' });
+    const varinha = list.atualizarVarinha(id, descricao, origem, imagem);
+    if(!varinha){
+        return res.status(404).send({message: "Varinha não encontrada!"});
     }
+    return res.status(200).send({message: `Varinha com id ${id} atualizada com sucesso!`, status:"Ok!"});
+}
 
-    return res.status(200).send({ message: `Varinha com id ${id} atualizada com sucesso!`});
-};
-
-
-export const excluirVarinha = (req, res) => {
-    const {id} = req.params;
-    const varinhas = lista.obterVarinhaPorId(id);
-    if(!varinhas) {
-        return res.status(404).send({ mensagem: "Varinha não encontrada!" });
+export const deletarVarinha = (req, res) => {
+    const { id } = req.params;
+    const varinha = list.obterVarinhaPorId(id);
+    if(!varinha){
+        return res.status(404).send({message: "Varinha não encontrada!"});
     }
-    lista.excluirVarinha(id);
-    return res.status(200).send({ message: `Varinha com id ${id} excluída com sucesso!`, status: 'ok'});
-
-};
+    list.excluirVarinha(id);
+    return res.status(200).send({message: `Varinha com id ${id} deletada com sucesso!`, status:"Ok!"});
+}
 

@@ -67,7 +67,7 @@ const varinhas = [
     },
     {
         id: 12,
-        dono: 'A varinha de Ginevra Weasley',
+        dono: 'Ginevra Weasley',
         origem: 'Era feita de madeira de teixo e possuía um comprimento e núcleo desconhecidos. Assim como a maioria dos bruxos britânicos, Gina provavelmente comprou sua varinha aos onze anos na Olivaras Varinhas antes de iniciar sua educação em Hogwarts.',
         imagem: 'https://i.pinimg.com/564x/66/a3/0f/66a30f7d705f9fdba5bd8fa5e0ea8f28.jpg'
     },

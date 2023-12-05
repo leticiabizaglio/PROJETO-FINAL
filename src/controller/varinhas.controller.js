@@ -54,6 +54,10 @@ export const criarVarinha = (req, res) => {
             message: "Origem deve ter deve ter entre 3 e 50 caracteres!"
         });
     }
+    if (varinhas.find((varinha) => varinha.dono.toLowerCase() === dono.toLowerCase())) {
+        return res.status(400).send({message: "Este dono ja existe!"});
+    }
+    
     if (isURLValid(imagem) === false) {
         return res.status(400).send({
             message: "URL da imagem é invalida!"

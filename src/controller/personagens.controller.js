@@ -45,6 +45,15 @@ export const criarPersonagem = (req, res) => {
         return res.status(400).send({message: "Dados inválidos!"});
     }
 
+    const personagens = list.getAllPersonagens();
+    // Verificação se o personagem existe
+
+    if (personagens.find((personagem) => personagem.nome.toLowerCase() === nome.toLowerCase())) {
+        return res.status(400).send({message: "Personagem ja existe!"});
+    }
+
+
+
     if(!isURLValid(imagem) === false){
         return res.status(400).send({message: "URL inválida!"});
     }

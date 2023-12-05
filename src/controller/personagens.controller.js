@@ -24,7 +24,7 @@ export const buscarTodosPersonagens = (req, res) => {
     const {tipo} = req.query;
 
     if(tipo){
-        const filteredPersonagens = personagens.filter(personagens => personagens.casa === tipo);
+        const filteredPersonagens = personagens.filter(personagens => personagens.casa == tipo);
         if(!filteredPersonagens.length){
             return res.status(404).send({message: `Nenhum personagem foi encontrado com essse tipo foi encontrado!`});
         }

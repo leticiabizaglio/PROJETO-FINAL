@@ -49,11 +49,17 @@ export const createCasa = (req, res) => {
             message: "Nome deve ter entre 3 e 50 caracteres!"
         });
     }
+    if (nome !== "grifinoria" && nome !=="sonserina"&& nome !== "lufa-lufa" && nome !== "corvinal") {
+        return res.status(400).send({
+            message: "Casa inválida!"
+        });
+    }    
     if(origem.length < 3 || origem.length > 50) {
         return res.status(400).send({
             message: "A origem deve ter entre 3 e 50 caracteres!"
         });
     }
+   
     if(isURLValid(imagem) === false) {
         return res.status(400).send({ message: "a imagem deve ser uma URL valida" });
     }

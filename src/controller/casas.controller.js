@@ -34,21 +34,25 @@ export const getCasaId = (req, res) =>{
 }
 export const createCasa = (req, res) => {
     const { nome, imagem, origem} = req.body;
+    // Verificação do URL válido
     const isURLValid = (url) => {
         if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
             return true;
         }else {
             return false;
         }
+        // Verificação preencha todos os campos!
     }
      if(!nome || !imagem || !origem){
         return res.status(404).send({message: "Preencha todos os campos!"});
     }
+    //Verificação que o nome do personagem deve ter entre 3 e 50 caracteres
     if(nome.length < 3 || nome.length > 50) {
         return res.status(400).send({
             message: "Nome deve ter entre 3 e 50 caracteres!"
         });
     }
+    // Verificação de que a casa do personagem precisa estar na API
     if (nome !== "grifinoria" && nome !=="sonserina"&& nome !== "lufa-lufa" && nome !== "corvinal") {
         return res.status(400).send({
             message: "Casa inválida!"

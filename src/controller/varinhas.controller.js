@@ -1,3 +1,4 @@
+// Importações
 import { VarinhaLista } from "../models/varinhas/VarinhasList.js";
 import { Varinha } from "../models/varinhas/Varinha.js";
 import varinhas from "../data/data.varinha.js";
@@ -12,12 +13,12 @@ varinhas.map(varinha => new Varinha (
     varinha.imagem
 )).forEach(varinha => list.criarVarinha(varinha));
 
-
+// Funções de busca de varinhas
 export const buscarVarinhas = (req, res) => {
 const varinhas = list.obterTodasVarinhas();
 return res.status(200).send({message: "Todas as varinhas via controller!", status:"Ok!", data: varinhas});
 }
-
+// Função de buscar as varinhas de acordo com o ID delas.
 export const buscarVarinhaPorId = (req, res) => {
     const { id } = req.params;
     const varinha = list.obterVarinhaPorId(id);
@@ -26,9 +27,10 @@ export const buscarVarinhaPorId = (req, res) => {
     }
     return res.status(200).send({message: `Varinha com id ${id}`, status:"Ok!"});
 }
-
+// Função de criar as varinhas
 export const criarVarinha = (req, res) => {
     const {dono, origem, imagem } = req.body;
+    // Verificação para saber se o URL da imagem é valido.
     const isURLValid = (url) => {
         if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
             return true;
@@ -36,14 +38,17 @@ export const criarVarinha = (req, res) => {
             return false;
         }
     }
+    // Verificação para preencher todos os campos.
     if(!dono || !origem || !imagem){
         return res.status(400).send({message: "Preencha todos os campos!"});
     }
+    // Verificação para saber se o nome do dono deve ter entre 3 e 50 caracteres.
     if(dono.length < 3 || dono.length > 50) {
         return res.status(400).send({
             message: "Nome do dono deve ter entre 3 e 50 caracteres!"
         });
     }
+    // Verificação para saber se a origem deve ter entre 3 e 50 caracteres.
     if(origem.length < 3 || origem.length > 50) {
         return res.status(400).send({
             message: "Origem deve ter deve ter entre 3 e 50 caracteres!"
@@ -58,7 +63,7 @@ export const criarVarinha = (req, res) => {
     list.criarVarinha(varinha);
     return res.status(200).send({message: "Varinha criada com sucesso!", status:"Ok!"});
 }
-
+// Função de editar/ atualizar as varinhas
 export const atualizarVarinha = (req, res) => {
     const { id } = req.params;
     const { dono, origem, imagem } = req.body;
@@ -71,7 +76,7 @@ export const atualizarVarinha = (req, res) => {
     }
     return res.status(200).send({message: `Varinha com id ${id} atualizada com sucesso!`, status:"Ok!"});
 }
-
+// Função de deletar a varinha
 export const deletarVarinha = (req, res) => {
     const { id } = req.params;
     const varinha = list.obterVarinhaPorId(id);

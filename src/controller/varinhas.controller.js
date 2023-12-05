@@ -39,6 +39,16 @@ export const criarVarinha = (req, res) => {
     if(!dono || !origem || !imagem){
         return res.status(400).send({message: "Dados inválidos!"});
     }
+    if(dono.length < 3 || dono.length > 50) {
+        return res.status(400).send({
+            message: "Nome do dono deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(origem.length < 3 || origem.length > 50) {
+        return res.status(400).send({
+            message: "Origem deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
     if (isURLValid(imagem) === false) {
         return res.status(400).send({
             message: "URL da imagem é invalida!"

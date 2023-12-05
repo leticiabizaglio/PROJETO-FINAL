@@ -13,11 +13,11 @@ export class VarinhaLista {
     obterVarinhaPorId(id) {
         return this.varinhas.find(varinha => varinha.id === id);
     }
-    atualizarVarinha(id, descricao, origem, imagem) {
+    atualizarVarinha(id, dono, origem, imagem) {
         const varinha = this.obterVarinhaPorId(id);
 
         if (varinha) {
-            varinha.descricao = descricao;
+            varinha.dono = dono;
             varinha.origem = origem;
             varinha.imagem = imagem;
         }

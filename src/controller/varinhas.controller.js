@@ -7,7 +7,7 @@ const list = new VarinhaLista();
 
 varinhas.map(varinha => new Varinha (
     varinha.id,
-    varinha.descricao,
+    varinha.dono,
     varinha.origem,
     varinha.imagem
 )).forEach(varinha => list.criarVarinha(varinha));
@@ -28,7 +28,7 @@ export const buscarVarinhaPorId = (req, res) => {
 }
 
 export const criarVarinha = (req, res) => {
-    const {descricao, origem, imagem } = req.body;
+    const {dono, origem, imagem } = req.body;
     const isURLValid = (url) => {
         if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
             return true;
@@ -36,7 +36,7 @@ export const criarVarinha = (req, res) => {
             return false;
         }
     }
-    if(!descricao || !origem || !imagem){
+    if(!dono || !origem || !imagem){
         return res.status(400).send({message: "Dados inválidos!"});
     }
     if (isURLValid(imagem) === false) {
@@ -44,18 +44,18 @@ export const criarVarinha = (req, res) => {
             message: "URL da imagem é invalida!"
         });
     }
-    const varinha = new Varinha(descricao, origem, imagem);
+    const varinha = new Varinha(dono, origem, imagem);
     list.criarVarinha(varinha);
     return res.status(200).send({message: "Varinha criada com sucesso!", status:"Ok!"});
 }
 
 export const atualizarVarinha = (req, res) => {
     const { id } = req.params;
-    const { descricao, origem, imagem } = req.body;
-    if(!descricao || !origem || !imagem){
+    const { dono, origem, imagem } = req.body;
+    if(!dono || !origem || !imagem){
         return res.status(400).send({message: "Dados inválidos!"});
     }
-    const varinha = list.atualizarVarinha(id, descricao, origem, imagem);
+    const varinha = list.atualizarVarinha(id, dono, origem, imagem);
     if(!varinha){
         return res.status(404).send({message: "Varinha não encontrada!"});
     }

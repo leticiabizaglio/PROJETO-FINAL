@@ -16,30 +16,19 @@ personagens.map(personagens => new Personagem (
 )).forEach(personagens => list.createPersonagem(personagens));
 
 
-
-
-// Função de buscar todos os personagens;
+// Função de buscar todos os personagens com base no nome;
 export const buscarTodosPersonagens = (req, res) => {
 
     const personagens = list.getAllPersonagens();
-
-    const {tipo} = req.query;
-
-    if(tipo){
-        const filter= personagens.filter((personagens) => personagens.tipo == tipo);
+    const {nome} = req.query;
+    
+    if(nome){
+        const filter= personagens.filter((personagens) => personagens.nome == nome);
         if(!filter.length){
-            return res.status(404).send({message: `Nenhum personagem foi cadastrado com essse tipo !`});
+            return res.status(404).send({message: `Nenhum personagem foi cadastrado!`});
         }
-        filter.forEach((personagens) => {
-            if(personagens.nome == true){
-                personagens.nome ="Sim";
-            }else{
-                personagens.nome = "Não";
-            }
-        });
         return res.status(200).send({message: `Todos os personagens do nome ${filter.length}`, status:"Ok!", data: filter});
     }
-
     return res.status(200).send({message: "Todos os personagens via controller!", status:"Ok!", data: personagens});
 }
 
@@ -68,17 +57,7 @@ export const criarPersonagem = (req, res) => {
     if (personagens.find((personagem) => personagem.nome.toLowerCase() === nome.toLowerCase())) {
         return res.status(400).send({message: "Personagem ja existe!"});
     }
-    // Verificação de que o nome do personagem precisa estar na API
-    if (nome !== "Harry Potter" && nome !=="Hermione Granger"&& nome !== "Ronald Weasley" && nome !== "Draco Malfoy"
-    && nome !== "Minerva McGongall" && nome !== "Cedric Diggory" && nome !== "Cho Chang" && nome !== "Severus Snape" && 
-    nome !== "Rúbeo Hagrid" && nome !== "Luna Lovegood" && nome !== "Neville Longbottom" && nome !== "Ginerva Weasley" &&
-    nome !== "Sirius Black" && nome !== "Remus Lupin" && nome !== "Arthur Weasley" && nome !== "Bellatrix Lestrange" &&
-    nome !== "Lord Voldemort" && nome !== "Horácio Slughorn" && nome !== "Dolores Umbridge" && nome !== "Fred Weasley" && nome !== "Jorge Weasley"
-    && nome !== "Alvo Dumbledore") {
-        return res.status(400).send({
-            message: "Nome precisa estar cadastrado na API!"
-        });
-    } 
+  
     // Verificação de que o nome deve ter entre 3 e 50 caracteres
     if(nome.length < 3 || nome.length > 50) {
         return res.status(400).send({

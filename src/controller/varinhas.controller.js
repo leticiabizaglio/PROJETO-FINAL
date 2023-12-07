@@ -54,9 +54,22 @@ export const criarVarinha = (req, res) => {
             message: "Origem deve ter deve ter entre 3 e 50 caracteres!"
         });
     }
-    if (varinhas.find((varinha) => varinha.dono.toLowerCase() === dono.toLowerCase())) {
-        return res.status(400).send({message: "Este dono ja existe!"});
-    }
+   
+    // // Verificação para saber se o dono já está cadastrado na API.
+    // if (varinhas.find((varinha) => varinha.dono.toLowerCase() === dono.toLowerCase())) {
+    //     return res.status(400).send({message: "Este dono ja existe!"});
+    // }
+      // Verificação de que o nome do dono precisa estar na API
+    if (dono !== "Harry Potter" && dono !=="Hermione Granger"&& dono !== "Ronald Weasley" && dono !== "Draco Malfoy"
+     && dono !== "Minerva McGongall" && dono !== "Cedric Diggory" && dono !== "Cho Chang" && dono !== "Severus Snape" && 
+     dono !== "Rúbeo Hagrid" && dono !== "Luna Lovegood" && dono !== "Neville Longbottom" && dono !== "Ginerva Weasley" &&
+     dono !== "Sirius Black" && dono !== "Remus Lupin" && dono !== "Arthur Weasley" && dono !== "Bellatrix Lestrange" &&
+     dono !== "Lord Voldemort" && dono !== "Horácio Slughorn" && dono !== "Dolores Umbridge" && dono !== "Fred Weasley" && dono !== "Jorge Weasley"
+     && dono !== "Alvo Dumbledore") {
+         return res.status(400).send({
+             message: "Nome do dono precisa estar cadastrado na API!"
+         });
+     } 
     
     if (isURLValid(imagem) === false) {
         return res.status(400).send({

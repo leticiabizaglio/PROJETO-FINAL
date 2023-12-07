@@ -111,6 +111,7 @@ export const atualizarVarinha = (req, res) => {
     }
     return res.status(200).send({message: `Varinha com id ${id} atualizada com sucesso!`, status:"Ok!"});
 }
+
 // Função de deletar a varinha
 export const deletarVarinha = (req, res) => {
     const { id } = req.params;

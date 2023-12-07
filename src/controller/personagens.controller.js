@@ -19,10 +19,7 @@ personagens.map(personagens => new Personagem (
 export const buscarTodosPersonagens = (req, res) => {
 
     const personagens = list.getAllPersonagens();
-
-    const {nome} = req.query;
     
-
 
     const {nome} = req.query;
     

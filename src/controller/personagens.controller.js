@@ -15,11 +15,15 @@ personagens.map(personagens => new Personagem (
     personagens.ator
 )).forEach(personagens => list.createPersonagem(personagens));
 
-
 // Função de buscar todos os personagens com base no nome;
 export const buscarTodosPersonagens = (req, res) => {
 
     const personagens = list.getAllPersonagens();
+
+    const {nome} = req.query;
+    
+
+
     const {nome} = req.query;
     
     if(nome){
@@ -27,6 +31,7 @@ export const buscarTodosPersonagens = (req, res) => {
         if(!filter.length){
             return res.status(404).send({message: `Nenhum personagem foi cadastrado!`});
         }
+
         return res.status(200).send({message: `Todos os personagens do nome ${filter.length}`, status:"Ok!", data: filter});
     }
     return res.status(200).send({message: "Todos os personagens via controller!", status:"Ok!", data: personagens});

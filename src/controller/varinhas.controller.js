@@ -16,8 +16,22 @@ varinhas.map(varinha => new Varinha (
 // Funções de busca de varinhas
 export const buscarVarinhas = (req, res) => {
 const varinhas = list.obterTodasVarinhas();
+
 if(varinhas.length) {
     return res.status(200).json(varinhas);
+
+
+const {dono} = req.query;
+
+if(dono){
+    const filter= varinhas.filter((varinhas) => varinhas.dono == dono);
+    if(!filter.length){
+        return res.status(404).send({message: `Nenhuma varinha foi criada com esse dono !`});
+    }
+    return res.status(200).send({message: `Todas as varinhas do dono ${filter.length}`, status:"Ok!", data: filter});
+}
+return res.status(200).send({message: "Todas as varinhas via controller!", status:"Ok!", data: varinhas});
+
 }
 return res.status(200).json({message: "Não há varinhas cadasradas!"});
 

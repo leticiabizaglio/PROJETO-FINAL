@@ -1,7 +1,7 @@
 const personagens = [
     {
         id: 1,
-        nome: "Harry Potter",
+        nome: "Harry Potter", 
         imagem: "https://ik.imagekit.io/hpapi/harry.jpg ",
         casa: "Grifinória",
         patrono: "Cervo",

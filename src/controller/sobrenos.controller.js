@@ -33,6 +33,13 @@ export const buscarSobrenosPorId = (req, res) => {
 // Função de criar uma nova pessoa;
 export const criarSobrenos = (req, res) => {
     const {nome, imagem, idade, escola, casa, email} = req.body;
+    const isURLValid = (url) => {
+        if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 
     if(!nome || !imagem || !idade || !escola || !casa || !email){
         return res.status(400).send({message: "Dados inválidos!"});
@@ -41,6 +48,12 @@ export const criarSobrenos = (req, res) => {
     if (idade < 11 || idade > 80) {
         return res.status(400).send({message: "Idade inválida!"});
     }
+    if (isURLValid(imagem) === false) {
+        return res.status(400).send({
+            message: "URL da imagem é invalida!"
+        });
+    }
+
 
     const sobrenos = new Sobrenos(nome, imagem, idade, escola, casa, email);
     list.createSobrenos(sobrenos);

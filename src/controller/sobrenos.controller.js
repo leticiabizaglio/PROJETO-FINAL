@@ -38,6 +38,10 @@ export const criarSobrenos = (req, res) => {
         return res.status(400).send({message: "Dados inválidos!"});
     }
 
+    if (idade < 11 || idade > 80) {
+        return res.status(400).send({message: "Idade inválida!"});
+    }
+
     const sobrenos = new Sobrenos(nome, imagem, idade, escola, casa, email);
     list.createSobrenos(sobrenos);
     return res.status(200).send({message: "Pessoa criada com sucesso!", data: sobrenos });

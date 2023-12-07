@@ -51,15 +51,37 @@ export const buscarPersonagemPorId = (req, res) => {
 
 // Função de criar um novo personagem;
 export const criarPersonagem = (req, res) => {
-    
 
     const { nome, imagem, casa, patrono, varinha, ator } = req.body;
-
-
     if(!nome || !imagem || !casa || !patrono || !varinha || !ator){
-        return res.status(400).send({message: "Dados inválidos!"});
+        return res.status(400).send({message: "Preencha todos os campos!"});
     }
 
+    const personagens = list.getAllPersonagens();
+    // Verificação se o personagem existe
+
+    if (personagens.find((personagem) => personagem.nome.toLowerCase() === nome.toLowerCase())) {
+        return res.status(400).send({message: "Personagem ja existe!"});
+    }
+    // Verificação de que o nome do personagem precisa estar na API
+    if (nome !== "Harry Potter" && nome !=="Hermione Granger"&& nome !== "Ronald Weasley" && nome !== "Draco Malfoy"
+    && nome !== "Minerva McGongall" && nome !== "Cedric Diggory" && nome !== "Cho Chang" && nome !== "Severus Snape" && 
+    nome !== "Rúbeo Hagrid" && nome !== "Luna Lovegood" && nome !== "Neville Longbottom" && nome !== "Ginerva Weasley" &&
+    nome !== "Sirius Black" && nome !== "Remus Lupin" && nome !== "Arthur Weasley" && nome !== "Bellatrix Lestrange" &&
+    nome !== "Lord Voldemort" && nome !== "Horácio Slughorn" && nome !== "Dolores Umbridge" && nome !== "Fred Weasley" && nome !== "Jorge Weasley"
+    && nome !== "Alvo Dumbledore") {
+        return res.status(400).send({
+            message: "Nome precisa estar cadastrado na API!"
+        });
+    } 
+    // Verificação de que o nome deve ter entre 3 e 50 caracteres
+    if(nome.length < 3 || nome.length > 50) {
+        return res.status(400).send({
+            message: "Nome deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+
+// Verificação para verificar se o URL da imagem é valido
     if(!isURLValid(imagem) === false){
         return res.status(400).send({message: "URL inválida!"});
     }

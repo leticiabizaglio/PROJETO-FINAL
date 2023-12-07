@@ -59,6 +59,11 @@ export const criarSobrenos = (req, res) => {
             message: "Email inválido",
         });
     }
+    if (casa !== "Grifinoria" && casa !=="Sonserina"&& casa !== "Lufa-lufa" && casa !== "Corvinal") {
+        return res.status(400).send({
+            message: "Casa inválida!"
+        });
+    }    
     if (idade < 11 || idade > 80) {
         return res.status(400).send({message: "Idade inválida!"});
     }

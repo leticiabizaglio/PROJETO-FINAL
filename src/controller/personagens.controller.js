@@ -18,7 +18,7 @@ personagens.map(personagens => new Personagem (
 
 
 
-// Função de buscar todos os personagens;
+// Função de buscar todos os personagens com base no nome;
 export const buscarTodosPersonagens = (req, res) => {
 
     const personagens = list.getAllPersonagens();

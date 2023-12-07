@@ -108,7 +108,6 @@ export const atualizarPersonagem = (req, res) => {
     return res.status(200).send({message: `Personagem com id ${id} atualizado com sucesso!`});
 }
 
-
 // Função de deletar um personagem;
 export const deletarPersonagem = (req, res) => {
     const { id } = req.params;

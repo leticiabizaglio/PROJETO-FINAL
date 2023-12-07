@@ -46,7 +46,12 @@ export const criarSobrenos = (req, res) => {
     }
     if(nome.length < 3 || nome.length > 50) {
         return res.status(400).send({
-            message: "nome deve ter deve ter entre 3 e 50 caracteres!"
+            message: " O nome deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(escola.length < 3 || escola.length > 50) {
+        return res.status(400).send({
+            message: "A escola deve ter deve ter entre 3 e 50 caracteres!"
         });
     }
     if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {

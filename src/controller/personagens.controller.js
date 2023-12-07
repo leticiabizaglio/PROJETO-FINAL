@@ -18,25 +18,20 @@ personagens.map(personagens => new Personagem (
 
 
 
-// Função de buscar todos os personagens;
+// Função de buscar todos os personagens com base no nome;
 export const buscarTodosPersonagens = (req, res) => {
 
     const personagens = list.getAllPersonagens();
 
-    const {tipo} = req.query;
+    const {nome} = req.query;
+    
 
-    if(tipo){
-        const filter= personagens.filter((personagens) => personagens.tipo == tipo);
+    if(nome){
+        const filter= personagens.filter((personagens) => personagens.nome == nome);
         if(!filter.length){
             return res.status(404).send({message: `Nenhum personagem foi cadastrado com essse tipo !`});
         }
-        filter.forEach((personagens) => {
-            if(personagens.nome == true){
-                personagens.nome ="Sim";
-            }else{
-                personagens.nome = "Não";
-            }
-        });
+      
         return res.status(200).send({message: `Todos os personagens do nome ${filter.length}`, status:"Ok!", data: filter});
     }
 

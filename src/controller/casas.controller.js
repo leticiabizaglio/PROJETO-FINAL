@@ -53,7 +53,7 @@ export const createCasa = (req, res) => {
         });
     }
     // Verificação de que a casa do personagem precisa estar na API
-    if (nome !== "grifinoria" && nome !=="sonserina"&& nome !== "lufa-lufa" && nome !== "corvinal") {
+    if (nome !== "Grifinoria" && nome !=="Sonserina"&& nome !== "Lufa-lufa" && nome !== "Corvinal") {
         return res.status(400).send({
             message: "Casa inválida!"
         });

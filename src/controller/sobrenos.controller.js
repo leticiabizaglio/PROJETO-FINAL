@@ -33,10 +33,46 @@ export const buscarSobrenosPorId = (req, res) => {
 // Função de criar uma nova pessoa;
 export const criarSobrenos = (req, res) => {
     const {nome, imagem, idade, escola, casa, email} = req.body;
+    const isURLValid = (url) => {
+        if(url.match(/\.(jpeg|jpg|gif|png)$/) !=null) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 
     if(!nome || !imagem || !idade || !escola || !casa || !email){
-        return res.status(400).send({message: "Dados inválidos!"});
+        return res.status(400).send({message: "Preencha todos os campos!"});
     }
+    if(nome.length < 3 || nome.length > 50) {
+        return res.status(400).send({
+            message: " O nome deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if(escola.length < 3 || escola.length > 50) {
+        return res.status(400).send({
+            message: "A escola deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        return res.status(400).send({
+            message: "Email inválido",
+        });
+    }
+    if (casa !== "Grifinoria" && casa !=="Sonserina"&& casa !== "Lufa-lufa" && casa !== "Corvinal") {
+        return res.status(400).send({
+            message: "Casa inválida!"
+        });
+    }    
+    if (idade < 11 || idade > 80) {
+        return res.status(400).send({message: "Idade inválida!"});
+    }
+    if (isURLValid(imagem) === false) {
+        return res.status(400).send({
+            message: "URL da imagem é invalida!"
+        });
+    }
+
 
     const sobrenos = new Sobrenos(nome, imagem, idade, escola, casa, email);
     list.createSobrenos(sobrenos);

@@ -17,6 +17,10 @@ varinhas.map(varinha => new Varinha (
 export const buscarVarinhas = (req, res) => {
 const varinhas = list.obterTodasVarinhas();
 
+if(varinhas.length) {
+    return res.status(200).json(varinhas);
+
+
 const {dono} = req.query;
 
 if(dono){
@@ -27,7 +31,11 @@ if(dono){
     return res.status(200).send({message: `Todas as varinhas do dono ${filter.length}`, status:"Ok!", data: filter});
 }
 return res.status(200).send({message: "Todas as varinhas via controller!", status:"Ok!", data: varinhas});
+
 }
+return res.status(200).json({message: "Não há varinhas cadasradas!"});
+
+};
 // Função de buscar as varinhas de acordo com o ID delas.
 export const buscarVarinhaPorId = (req, res) => {
     const { id } = req.params;
@@ -64,9 +72,22 @@ export const criarVarinha = (req, res) => {
             message: "Origem deve ter deve ter entre 3 e 50 caracteres!"
         });
     }
-    if (varinhas.find((varinha) => varinha.dono.toLowerCase() === dono.toLowerCase())) {
-        return res.status(400).send({message: "Este dono ja existe!"});
-    }
+   
+    // // Verificação para saber se o dono já está cadastrado na API.
+    // if (varinhas.find((varinha) => varinha.dono.toLowerCase() === dono.toLowerCase())) {
+    //     return res.status(400).send({message: "Este dono ja existe!"});
+    // }
+      // Verificação de que o nome do dono precisa estar na API
+    if (dono !== "Harry Potter" && dono !=="Hermione Granger"&& dono !== "Ronald Weasley" && dono !== "Draco Malfoy"
+     && dono !== "Minerva McGongall" && dono !== "Cedric Diggory" && dono !== "Cho Chang" && dono !== "Severus Snape" && 
+     dono !== "Rúbeo Hagrid" && dono !== "Luna Lovegood" && dono !== "Neville Longbottom" && dono !== "Ginerva Weasley" &&
+     dono !== "Sirius Black" && dono !== "Remus Lupin" && dono !== "Arthur Weasley" && dono !== "Bellatrix Lestrange" &&
+     dono !== "Lord Voldemort" && dono !== "Horácio Slughorn" && dono !== "Dolores Umbridge" && dono !== "Fred Weasley" && dono !== "Jorge Weasley"
+     && dono !== "Alvo Dumbledore") {
+         return res.status(400).send({
+             message: "Nome do dono precisa estar cadastrado na API!"
+         });
+     } 
     
     if (isURLValid(imagem) === false) {
         return res.status(400).send({

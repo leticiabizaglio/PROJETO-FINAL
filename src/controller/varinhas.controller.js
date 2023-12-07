@@ -16,8 +16,12 @@ varinhas.map(varinha => new Varinha (
 // Funções de busca de varinhas
 export const buscarVarinhas = (req, res) => {
 const varinhas = list.obterTodasVarinhas();
-return res.status(200).send({message: "Todas as varinhas via controller!", status:"Ok!", data: varinhas});
+if(varinhas.length) {
+    return res.status(200).json(varinhas);
 }
+return res.status(200).json({message: "Não há varinhas cadasradas!"});
+
+};
 // Função de buscar as varinhas de acordo com o ID delas.
 export const buscarVarinhaPorId = (req, res) => {
     const { id } = req.params;

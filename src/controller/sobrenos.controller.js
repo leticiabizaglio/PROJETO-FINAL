@@ -42,9 +42,18 @@ export const criarSobrenos = (req, res) => {
     }
 
     if(!nome || !imagem || !idade || !escola || !casa || !email){
-        return res.status(400).send({message: "Dados inválidos!"});
+        return res.status(400).send({message: "Preencha todos os campos!"});
     }
-
+    if(nome.length < 3 || nome.length > 50) {
+        return res.status(400).send({
+            message: "nome deve ter deve ter entre 3 e 50 caracteres!"
+        });
+    }
+    if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        return res.status(400).send({
+            message: "Email inválido",
+        });
+    }
     if (idade < 11 || idade > 80) {
         return res.status(400).send({message: "Idade inválida!"});
     }

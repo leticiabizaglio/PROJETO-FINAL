@@ -42,7 +42,7 @@ export const buscarPersonagemPorId = (req, res) => {
     if(!personagem){
         return res.status(404).send({message: "Personagem não encontrado!"});
     }
-    return res.status(200).send({message: `Personagem com id ${id}`, status:"Ok!"});
+    return res.status(200).send({message: `Personagem com id ${id}`, nome: personagem.nome, imagem: personagem.imagem, casa: personagem.casa, patrono: personagem.patrono, varinha: personagem.varinha, ator: personagem.ator, status:"Ok!"});
 }
 
 // Função de criar um novo personagem;

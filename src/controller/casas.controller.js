@@ -30,7 +30,7 @@ export const getCasaId = (req, res) =>{
              
             });
     }
-    return res.status(200).send({ message: `id: ${id}!`, data:casa });
+    return res.status(200).send({ message: `id: ${id}!`, nome: casa.nome, imagem: casa.imagem, origem: casa.origem});
 }
 export const createCasa = (req, res) => {
     const { nome, imagem, origem} = req.body;

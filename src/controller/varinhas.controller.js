@@ -43,7 +43,7 @@ export const buscarVarinhaPorId = (req, res) => {
     if(!varinha){
         return res.status(404).send({message: "Varinha não encontrada!"});
     }
-    return res.status(200).send({message: `Varinha com id ${id}`, status:"Ok!"});
+    return res.status(200).send({message: `Varinha com id ${id}`, dono: varinha.dono, origem: varinha.origem, imagem: varinha.imagem, status:"Ok!"});
 }
 // Função de criar as varinhas
 export const criarVarinha = (req, res) => {

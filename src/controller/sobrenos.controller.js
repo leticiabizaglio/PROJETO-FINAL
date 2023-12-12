@@ -27,7 +27,7 @@ export const buscarSobrenosPorId = (req, res) => {
     if(!sobrenos){
         return res.status(404).send({message: "Pessoa não encontrada!"});
     }
-    return res.status(200).send({message: `Pessoa com id ${id}`, status:"Ok!" });
+    return res.status(200).send({message: `Pessoa com id ${id}`, nome: sobrenos.nome, imagem: sobrenos.imagem, idade: sobrenos.idade, escola: sobrenos.escola, casa: sobrenos.casa, email: sobrenos.email, status:"Ok!"});
 }
 
 // Função de criar uma nova pessoa;
